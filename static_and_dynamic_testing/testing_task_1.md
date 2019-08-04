@@ -25,7 +25,7 @@ class CardGame
 end
 end #remove extra end that should not be here.
 
-def self.cards_total(cards) #function should be self_cards_total(cards) only use _ in function names
+def self.cards_total(cards) #self. should be taken away as this is an instance method
   total #total needs to be assigned an initial value of total = 0
   for card in cards
     total += card.value
