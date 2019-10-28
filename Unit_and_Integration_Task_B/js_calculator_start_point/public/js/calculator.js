@@ -18,7 +18,12 @@ Calculator.prototype.multiply = function(number){
 }
 
 Calculator.prototype.divide = function(number){
-  this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number);
+  if (number !== 0) {
+    this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number);
+  } else {
+    //if division is by 0 - return Cannot divide by 0
+    this.runningTotal = 'Cannot divide by 0'
+  }
 }
 
 Calculator.prototype.numberClick = function(number){
@@ -64,6 +69,7 @@ Calculator.prototype.operatorClick = function(operator){
   } else {
     this.previousOperator = operator;
   }
+
   // replace the previous total with the current running total and flag that a
   // new total has been calculated
 
@@ -78,5 +84,6 @@ Calculator.prototype.clearClick = function(){
   }
   this.runningTotal = 0;
 }
+
 
 if(typeof module != 'undefined'){ module.exports = Calculator}
