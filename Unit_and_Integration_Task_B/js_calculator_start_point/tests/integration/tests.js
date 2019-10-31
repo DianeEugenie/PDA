@@ -20,6 +20,7 @@ describe('calculator functionality', function() {
     running_total = element(by.css('#running_total'))
     element(by.css('#number4')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('4');
+    
     element(by.css('#number2')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('42');
   })
